@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tab Renamer Test Page</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 8px;
+        }
+
+        .test-section {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .test-section h3 {
+            margin-top: 0;
+            color: #495057;
+        }
+
+        .instruction {
+            background: #e7f3ff;
+            border-left: 4px solid #007bff;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .warning {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .success {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .code {
+            background: #f1f3f4;
+            border: 1px solid #dadce0;
+            border-radius: 4px;
+            padding: 10px;
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin: 10px 10px 10px 0;
+            cursor: pointer;
+            border: none;
+            font-size: 14px;
+        }
+
+        .button:hover {
+            background: #0056b3;
+        }
+
+        .checklist {
+            list-style: none;
+            padding: 0;
+        }
+
+        .checklist li {
+            padding: 8px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .checklist li:before {
+            content: "☐ ";
+            margin-right: 10px;
+            font-size: 18px;
+        }
+
+        #title-display {
+            font-weight: bold;
+            color: #007bff;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+
+        .navigation-links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🏷️ Tab Renamer Extension</h1> Test Page</h1>
+        <p>Use this page to test the Tab Renamer Chrome extension functionality</p>
+    </div>
+
+    <div class="test-section">
+        <h3>📋 Extension Installation Checklist</h3>
+        <ul class="checklist">
+            <li>Extension is loaded in Chrome (chrome://extensions/)</li>
+            <li>Developer mode is enabled</li>
+            <li>Tab Renamer appears in extensions list</li>
+            <li>Extension icon is visible in toolbar (or extensions menu)</li>
+            <li>No error messages in the extensions page</li>
+        </ul>
+    </div>
+
+    <div class="test-section">
+        <h3>🖱️ Right-Click Context Menu Test</h3>
+        <div class="instruction">
+            <strong>Instructions:</strong>
+            <ol>
+                <li>Right-click anywhere on this page</li>
+                <li>Look for "Rename Tab" in the context menu</li>
+                <li>Click "Rename Tab"</li>
+                <li>Enter a custom name (e.g., "My Test Tab")</li>
+                <li>Press Enter or click "Rename"</li>
+                <li>Check if the browser tab title changed</li>
+            </ol>
+        </div>
+        <div class="success">
+            ✅ <strong>Expected Result:</strong> The tab title should change to your custom name
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h3>🔧 Extension Popup Test</h3>
+        <div class="instruction">
+            <strong>Instructions:</strong>
+            <ol>
+                <li>Click the Tab Renamer icon in the Chrome toolbar</li>
+                <li>The popup should show the current tab title</li>
+                <li>Click "Rename This Tab" button</li>
+                <li>Enter a different custom name</li>
+                <li>Press Enter or click "Rename"</li>
+                <li>Verify the tab title updates</li>
+            </ol>
+        </div>
+        <div class="success">
+            ✅ <strong>Expected Result:</strong> The popup should close and tab title should update
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h3>🔄 Reset Functionality Test</h3>
+        <div class="instruction">
+            <strong>Instructions:</strong>
+            <ol>
+                <li>First, rename this tab using either method above</li>
+                <li>Right-click and select "Rename Tab" again</li>
+                <li>Click "Reset to Original" button</li>
+                <li>Verify the tab title returns to "Tab Renamer Test Page"</li>
+            </ol>
+        </div>
+        <div class="success">
+            ✅ <strong>Expected Result:</strong> Tab title should reset to the original page title
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h3>🔗 Navigation Persistence Test</h3>
+        <div class="instruction">
+            <strong>Instructions:</strong>
+            <ol>
+                <li>Rename this tab to something custom</li>
+                <li>Click one of the navigation links below</li>
+                <li>Check if the custom tab name persists</li>
+                <li>Use the browser's back button to return</li>
+                <li>Verify the custom name is still there</li>
+            </ol>
+        </div>
+        <div class="navigation-links">
+            <a href="#section1" class="button">Navigate to Section 1</a>
+            <a href="#section2" class="button">Navigate to Section 2</a>
+            <a href="?test=1" class="button">Add URL Parameter</a>
+        </div>
+        <div class="success">
+            ✅ <strong>Expected Result:</strong> Custom tab name should persist during navigation within the same tab
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h3>⌨️ Keyboard Shortcuts Test</h3>
+        <div class="instruction">
+            <strong>Instructions:</strong>
+            <ol>
+                <li>Right-click and select "Rename Tab"</li>
+                <li>Enter some text in the dialog</li>
+                <li>Press <strong>Enter</strong> to confirm</li>
+                <li>Open the rename dialog again</li>
+                <li>Press <strong>Escape</strong> to cancel</li>
+            </ol>
+        </div>
+        <div class="success">
+            ✅ <strong>Expected Result:</strong> Enter should confirm the rename, Escape should cancel
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h3>📊 Current Tab Information</h3>
+        <p></p><strong>Original Page Title:</strong> <span class="code">Tab Renamer Test Page</span></p>
+        <p><strong>Current Document Title:</strong> <span id="title-display">Loading...</span></p>
+        <button class="button" onclick="updateTitleDisplay()">Refresh Title Display</button>
+        <div class="warning">
+            <strong>Note:</strong> If you've renamed the tab, the "Current Document Title" should show your custom name.
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h3></h3>🐛 Troubleshooting</h3>
+        <h4>If the context menu doesn't appear:</h4>
+        <ul>
+            <li>Refresh this page and try again</li>
+            <li>Check chrome://extensions/ for error messages</li>
+            <li>Make sure the extension is enabled</li>
+            <li>Try reloading the extension (click refresh icon)</li>
+        </ul>
+
+        <h4>If the dialog doesn't show:</h4>
+        <ul>
+            <li>Open Developer Tools (F12) and check for JavaScript errors</li>
+            <li>Try disabling other extensions temporarily</li>
+            <li>Check if the content script is injected properly</li>
+        </ul>
+
+        <h4>If tab names don't persist:</h4>
+        <ul>
+            <li>This is expected across browser restarts (names are stored in memory)</li>
+            <li>Names should persist within the same tab during navigation</li>
+            <li>Check the background script console for errors</li>
+        </ul>
+    </div>
+
+    <!-- Test sections for navigation -->
+    <div id="section1" style="padding-top: 100px;">
+        <h3>🔍 Section 1 - Navigation Test Target</h3>
+        <p>This section is used to test navigation persistence. If you navigated here after renaming the tab, the custom name should still be visible in the tab title.</p>
+        <a href="#top" class="button">Back to Top</a>
+    </div>
+
+    <div id="section2" style="padding-top: 100px;">
+        <h3>🎯 Section 2 - Another Navigation Test Target</h3>
+        <p>This is another section for testing navigation. The tab name should remain custom even when jumping between page sections.</p>
+        <a href="#top" class="button">Back to Top</a>
+    </div>
+
+    <script>
+        // Update the title display
+        function updateTitleDisplay() {
+            document.getElementById('title-display').textContent = document.title;
+        }
+
+        // Initial title display
+        updateTitleDisplay();
+
+        // Monitor title changes
+        new MutationObserver(function() {
+            updateTitleDisplay();
+        }).observe(document.querySelector('title'), {
+            childList: true
+        });
+
+        // Add some interactivity for testing
+        document.addEventListener('DOMContentLoaded', function() {
+            // Highlight the current section if we're navigating
+            const hash = window.location.hash;
+            if (hash) {
+                const element = document.querySelector(hash);
+                if (element) {
+                    element.style.backgroundColor = '#ffffcc';
+                    element.style.padding = '20px';
+                    element.style.borderRadius = '8px';
+                    element.style.border = '2px solid #ffc107';
+                }
+            }
+        });
+
+        // Simple console logging for debugging
+        console.log('Tab Renamer Test Page Loaded');
+        console.log('Original title:', document.title);
+        console.log('If the extension is working, you should see context menu when right-clicking');
+    </script>
+</body>
+</html>
