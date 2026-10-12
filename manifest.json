@@ -1,8 +1,9 @@
 {
   "manifest_version": 3,
   "name": "Tab Renamer",
-  "version": "1.0",
+  "version": "1.1",
   "description": "Right-click on tabs to rename them with custom titles",
+  "minimum_chrome_version": "111",
   "permissions": ["tabs", "contextMenus", "activeTab"],
   "background": {
     "service_worker": "background.js"
@@ -11,6 +12,13 @@
     {
       "matches": ["<all_urls>"],
       "js": ["content.js"]
+    },
+    {
+      "matches": ["https://app.slack.com/*"],
+      "js": ["slack-call-tab.js"],
+      "run_at": "document_start",
+      "world": "MAIN",
+      "all_frames": true
     }
   ],
   "action": {

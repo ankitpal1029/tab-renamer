@@ -9,6 +9,7 @@ A simple Chrome extension that allows you to rename browser tabs with custom tit
 - 🔄 **Reset Option**: Easily restore original tab titles
 - ⌨️ **Keyboard Shortcuts**: Use Enter to confirm or Escape to cancel
 - 🎯 **Multiple Access Methods**: Right-click context menu or extension popup
+- 📞 **Slack Calls in Tabs**: Slack huddles and calls open as a tab instead of a popup window
 
 ## Installation
 
@@ -52,6 +53,14 @@ The extension will be available on the Chrome Web Store once published.
 ### Additional Options
 - **Reset to Original**: Click "Reset to Original" to restore the original page title
 - **Cancel**: Click "Cancel" or press Escape to close the dialog without changes
+
+## Slack Calls in Tabs
+
+On `app.slack.com`, `slack-call-tab.js` wraps `window.open` and drops the popup sizing features
+(`width`, `height`, ...), so Chrome opens huddles and calls as a normal tab. `noopener`/`noreferrer`
+are kept. The tab stays linked to the Slack tab that opened it, so huddle controls keep working.
+
+Reload the Slack tab after installing or updating the extension.
 
 ## How It Works
 
